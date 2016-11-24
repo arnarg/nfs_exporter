@@ -1,0 +1,29 @@
+{
+  "name": "nfs_exporter",
+  "version": "0.0.1",
+  "description": "NFS exporter for prometheus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnarg/nfs_exporter.git"
+  },
+  "keywords": [
+    "nfs",
+    "exporter",
+    "prometheus"
+  ],
+  "author": "Arnar Gauti Ingason <granra@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arnarg/nfs_exporter/issues"
+  },
+  "homepage": "https://github.com/arnarg/nfs_exporter#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "prometheus-client": "^0.1.1",
+    "yargs": "^6.4.0"
+  }
+}
