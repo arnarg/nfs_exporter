@@ -131,6 +131,31 @@ function NFSPrometheus() {
 				name: 'op_create',
 				help: 'Number of create operations'
 			}),
+			delegreturn: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_delegreturn',
+				help: 'Number of delegreturn operations'
+			}),
+			getattr: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_getattr',
+				help: 'Number of getattr operations'
+			}),
+			getfh: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_getfh',
+				help: 'Number of getfh operations'
+			}),
+			lock: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_lock',
+				help: 'Number of lock operations'
+			}),
+			lookup: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_lookup',
+				help: 'Number of lookup operations'
+			}),
 			read: this.prom.newGauge({
 				namespace: 'nfs',
 				name: 'op_read',
@@ -140,6 +165,21 @@ function NFSPrometheus() {
 				namespace: 'nfs',
 				name: 'op_open',
 				help: 'Number of open operations'
+			}),
+			putfh: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_putfh',
+				help: 'Number of putfh operations'
+			}),
+			putrootfh: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_putrootfh',
+				help: 'Number of putrootfh operations'
+			}),
+			readdir: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_readdir',
+				help: 'Number of readdir operations'
 			}),
 			write: this.prom.newGauge({
 				namespace: 'nfs',
@@ -155,7 +195,62 @@ function NFSPrometheus() {
 				namespace: 'nfs',
 				name: 'op_remove',
 				help: 'Number of remove operations'
-			})
+			}),
+			savefh: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_savefh',
+				help: 'Number of savefh operations'
+			}),
+			setattr: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_setattr',
+				help: 'Number of setattr operations'
+			}),
+			exchange_id: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_exchange_id',
+				help: 'Number of exchange_id operations'
+			}),
+			create_ses: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_create_ses',
+				help: 'Number of create_ses operations'
+			}),
+			destroy_ses: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_destroy_ses',
+				help: 'Number of destroy_ses operations'
+			}),
+			free_stateid: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_free_stateid',
+				help: 'Number of free_stateid operations'
+			}),
+			secinfononam: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_secinfononam',
+				help: 'Number of secinfononam operations'
+			}),
+			sequence: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_sequence',
+				help: 'Number of sequence operations'
+			}),
+			test_stateid: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_test_stateid',
+				help: 'Number of test_stateid operations'
+			}),
+			destroy_clid: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_destroy_clid',
+				help: 'Number of destroy_clid operations'
+			}),
+			reclaim_comp: this.prom.newGauge({
+				namespace: 'nfs',
+				name: 'op_reclaim_comp',
+				help: 'Number of reclaim_comp operations'
+			}),
 		}
 	};
 }
@@ -190,6 +285,25 @@ NFSPrometheus.prototype.setGauges = function setGauges(data) {
 	this.gauges.proc4ops.write.set(null, data.nfsv4ops.write);
 	this.gauges.proc4ops.rename.set(null, data.nfsv4ops.rename);
 	this.gauges.proc4ops.remove.set(null, data.nfsv4ops.remove);
+	this.gauges.proc4ops.delegreturn.set(null, data.nfsv4ops.delegreturn);
+	this.gauges.proc4ops.getattr.set(null, data.nfsv4ops.getattr);
+	this.gauges.proc4ops.getfh.set(null, data.nfsv4ops.getfh);
+	this.gauges.proc4ops.lock.set(null, data.nfsv4ops.lock);
+	this.gauges.proc4ops.lookup.set(null, data.nfsv4ops.lookup);
+	this.gauges.proc4ops.putfh.set(null, data.nfsv4ops.putfh);
+	this.gauges.proc4ops.putrootfh.set(null, data.nfsv4ops.putrootfh);
+	this.gauges.proc4ops.readdir.set(null, data.nfsv4ops.readdir);
+	this.gauges.proc4ops.savefh.set(null, data.nfsv4ops.savefh);
+	this.gauges.proc4ops.setattr.set(null, data.nfsv4ops.setattr);
+	this.gauges.proc4ops.exchange_id.set(null, data.nfsv4ops.exchange_id);
+	this.gauges.proc4ops.create_ses.set(null, data.nfsv4ops.create_ses);
+	this.gauges.proc4ops.destroy_ses.set(null, data.nfsv4ops.destroy_ses);
+	this.gauges.proc4ops.free_stateid.set(null, data.nfsv4ops.free_stateid);
+	this.gauges.proc4ops.secinfononam.set(null, data.nfsv4ops.secinfononam);
+	this.gauges.proc4ops.sequence.set(null, data.nfsv4ops.sequence);
+	this.gauges.proc4ops.test_stateid.set(null, data.nfsv4ops.test_stateid);
+	this.gauges.proc4ops.destroy_clid.set(null, data.nfsv4ops.destroy_clid);
+	this.gauges.proc4ops.reclaim_comp.set(null, data.nfsv4ops.reclaim_comp);
 }
 
 module.exports = NFSPrometheus;
