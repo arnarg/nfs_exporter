@@ -1,3 +1,5 @@
+# Deprecated: node exporter now exports NFSd metrics.
+
 # NFS exporter
 
 This exports metrics for an NFSv4 server. It reads from /proc/net/rpc/nfsd
